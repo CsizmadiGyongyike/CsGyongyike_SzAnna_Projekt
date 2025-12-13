@@ -6,10 +6,139 @@ body {
     padding: 0;
 }
 
-header,footer{
+header{
     background-color: black;
     padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    width: 100%;
+}
+
+footer {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 5% auto; 
+    border: 1px solid #0f0;
+    width: 80%; 
+    max-width: 400px; 
+    border-radius: 8px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #a2ff74;
+    cursor: pointer;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-form h2 {
+    margin-bottom: 20px;
+    color: #c3ff00;
+}
+
+.modal-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    width: 80%; 
+    text-align: left; 
+}
+
+.modal-form input {
+    border-radius: 5px;
+    height: 35px;
+    width: 80%;
+    margin: 5px 0 15px 0;
+    padding: 5px 10px;
+    background-color: #5e5e5e;
+    color: white;
+    border: 1px solid #0f0; 
+    box-sizing: border-box;
+}
+
+.modal-form button {
+    height: 45px; 
+    width: 80%;
+    font-weight: bold;
+    background-color: #008418;
+    border: 1px solid #1f1c1c;
+    border-radius: 5px;
+    color: white;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.modal-form button:hover{
+    background-color: #00b321;
+    cursor: pointer;
+}
+
+.modal-button {
+    background-color: #c3ff00;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.modal-button:hover {
+    background-color: #a2ff74;
+    box-shadow: 0 0 10px #a2ff74;
 }
 
 nav ul {
