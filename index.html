@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebshopNev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">WebshopNev</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="kategoriak.html">Kategóriák</a></li>
+                <li><a href="rolunk.html">Rólunk</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="modal-button" onclick="document.getElementById('loginModal').style.display='block'">Belépés</button>
+            <button class="modal-button" onclick="document.getElementById('registerModal').style.display='block'">Regisztráció</button>
+        </div>
+    </header>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content animate">
+            <span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Bezár">&times;</span>
+            <form action="login.php" method="POST" class="modal-form">
+                <h2>Belépés</h2>
+                <label for="username">Felhasználónév:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Jelszó:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Belépés</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content animate">
+            <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Bezár">&times;</span>
+            <form action="register.php" method="POST" class="modal-form">
+                <h2>Regisztráció</h2>
+                <label for="reg-username">Felhasználónév:</label>
+                <input type="text" id="reg-username" name="username" required>
+                
+                <label for="reg-email">E-mail cím:</label>
+                <input type="email" id="reg-email" name="email" required>
+
+                <label for="reg-password">Jelszó:</label>
+                <input type="password" id="reg-password" name="password" required>
+
+                <button type="submit">Regisztráció</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <section class="welcome">
+            <h2>Üdv a gamer kiegészítők világában!</h2>
+            <p>Válogass egyedi és minőségi termékeink közül.</p>
+        </section>
+
+        <section class="offer">
+            <h3>Termékek</h3>
+            <div class="products">
+                <a href="termek.html">Egerek</a>
+                <a href="termek.html">Billentyűzetek</a>
+                <a href="termek.html">Fejhallgatók</a>
+                <a href="termek.html">Játék konzolok</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 WebshopNev</p>
+    </footer>
+</body>
+</html>
