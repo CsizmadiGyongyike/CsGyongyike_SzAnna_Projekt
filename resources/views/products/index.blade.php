@@ -1,0 +1,210 @@
+@extends('layouts.app')
+
+@section('content')
+    <main>
+        <h1>Egérpadok</h1>
+        <section class="card-container">
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">SkullStorm Viper</h2>
+                    <p class="card-text">
+                        Egyedi koponya–sárkány mintás gamer egér, dinamikus RGB világítással és nagy pontosságú 12 000
+                        DPI érzékelővel. Kiemelkedő tartósság, csúszásmentes felület és látványos design hardcore
+                        gamereknek.
+                    </p>
+                    <p>
+                        Ár: 22 490 Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">CyberTrace NeoPulse</h2>
+                    <p class="card-text">
+                        Ultramodern, áramköri mintázattal díszített gamer egér, amely a neon kékre és narancsra világító
+                        elemeivel futurisztikus hangulatot ad minden setupnak. Precíz 14 000 DPI érzékelője,
+                        programozható oldalsó gombjai és a könnyű, ergonomikus kialakítás tökéletes választássá teszik
+                        kompetitív játékosok számára is.
+                    </p>
+                    <p>
+                        Ár: 19 990 Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">BlazeDragon Inferno FX</h2>
+                    <p class="card-text">
+                        Tűzvörös, részletesen kidolgozott sárkánymintával ellátott prémium gamer egér, amely brutális
+                        megjelenést és megbízható teljesítményt nyújt. A 16 000 DPI-s érzékelő kristálypontos követést
+                        biztosít, az RGB világítás pedig tökéletesen kiemeli a forró, lángoló design részleteit.
+                        Ergonomikus formájának köszönhetően hosszú játékmaratonok alatt is kényelmes marad.
+                    </p>
+                    <p>
+                        Ár: 23 490 Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <br>
+
+        <h1>Billentyűzetek</h1>
+        <section class="card-container">
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">BlazeDragon Inferno KB</h2>
+                    <p class="card-text">
+                        A BlazeDragon Inferno FX gamer egér tökéletes társa: a BlazeDragon Inferno KB mechanikus
+                        billentyűzet ugyanazzal a tűzvörös, részletes sárkánymintával érkezik, amely különleges egységet
+                        teremt a setupban. A többzónás RGB háttérvilágítás kiemeli a lángoló design minden részletét, a
+                        tartós switch-ek pedig villámgyors reakciót biztosítanak. A masszív, prémium kivitel hosszú
+                        éveken át bírja az intenzív játékot.
+                    </p>
+                    <p>
+                        Ár: 32 990 Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <br>
+
+        <h1>Fejhallgatók</h1>
+        <section class="card-container">
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <br>
+
+        <h1>Játék konzolok</h1>
+        <section class="card-container">
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="Termék képe">
+                <div class="card-body">
+                    <h2 class="card-title">Termék neve</h2>
+                    <p class="card-text">
+                        Termék leírása
+                    </p>
+                    <p>
+                        Ár: x Ft
+                    </p>
+                    <a href="#" class="card-button">Kosárba</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CTRL+Vibe Gamer Webshop</p>
+    </footer>
+@endsection
