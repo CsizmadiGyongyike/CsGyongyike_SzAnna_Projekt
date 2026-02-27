@@ -25,8 +25,4 @@
             Köszönjük, hogy itt vagy - pörgesd végig a kínálatot, és ha kérdésed van, bátran írj nekünk!
         </p>
     </main>
-
-    <footer>
-        <p>&copy; 2025 CTRL+Vibe Gamer Webshop</p>
-    </footer>
 @endsection

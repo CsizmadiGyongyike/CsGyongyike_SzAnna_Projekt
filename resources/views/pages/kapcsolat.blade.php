@@ -16,8 +16,4 @@
             <button type="submit">Küldés</button>
         </form>
     </main>
-
-    <footer>
-        <p>&copy; 2025 CTRL+Vibe Gamer Webshop</p>
-    </footer>
 @endsection

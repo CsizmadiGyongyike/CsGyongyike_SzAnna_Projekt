@@ -4,7 +4,7 @@
     <main>
         <h1>Egérpadok</h1>
         <section class="card-container">
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">SkullStorm Viper</h2>
@@ -16,11 +16,15 @@
                     <p>
                         Ár: 22 490 Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">CyberTrace NeoPulse</h2>
@@ -33,11 +37,15 @@
                     <p>
                         Ár: 19 990 Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">BlazeDragon Inferno FX</h2>
@@ -50,7 +58,11 @@
                     <p>
                         Ár: 23 490 Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
         </section>
@@ -60,7 +72,7 @@
 
         <h1>Billentyűzetek</h1>
         <section class="card-container">
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -70,11 +82,15 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -84,11 +100,15 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">BlazeDragon Inferno KB</h2>
@@ -102,7 +122,11 @@
                     <p>
                         Ár: 32 990 Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
         </section>
@@ -112,7 +136,7 @@
 
         <h1>Fejhallgatók</h1>
         <section class="card-container">
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -122,11 +146,15 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -136,11 +164,15 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -150,7 +182,11 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
         </section>
@@ -160,7 +196,7 @@
 
         <h1>Játék konzolok</h1>
         <section class="card-container">
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -170,11 +206,15 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -184,11 +224,15 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
 
-            <div class="card">
+            <div class="mycard">
                 <img src="" alt="Termék képe">
                 <div class="card-body">
                     <h2 class="card-title">Termék neve</h2>
@@ -198,13 +242,13 @@
                     <p>
                         Ár: x Ft
                     </p>
-                    <a href="#" class="card-button">Kosárba</a>
+                    @auth
+                        <a href="#" class="card-button">Kosárba</a>
+                        @else
+                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
+                    @endauth
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 CTRL+Vibe Gamer Webshop</p>
-    </footer>
 @endsection
