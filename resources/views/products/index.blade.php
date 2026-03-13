@@ -2,253 +2,43 @@
 
 @section('content')
     <main>
-        <h1>Egérpadok</h1>
-        <section class="card-container">
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">SkullStorm Viper</h2>
-                    <p class="card-text">
-                        Egyedi koponya–sárkány mintás gamer egér, dinamikus RGB világítással és nagy pontosságú 12 000
-                        DPI érzékelővel. Kiemelkedő tartósság, csúszásmentes felület és látványos design hardcore
-                        gamereknek.
-                    </p>
-                    <p>
-                        Ár: 22 490 Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
+    {{-- Ide költöztesd át az üdvözlő szöveget a app.blade.php-ből, ha szeretnéd --}}
+    <section class="welcome-hero" style="text-align: center; padding: 40px;">
+        <h1>ÜDVÖZÖL A CTRL+VIBE!</h1>
+        <p>A legmenőbb gamer cuccok egy helyen.</p>
+    </section>
 
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">CyberTrace NeoPulse</h2>
-                    <p class="card-text">
-                        Ultramodern, áramköri mintázattal díszített gamer egér, amely a neon kékre és narancsra világító
-                        elemeivel futurisztikus hangulatot ad minden setupnak. Precíz 14 000 DPI érzékelője,
-                        programozható oldalsó gombjai és a könnyű, ergonomikus kialakítás tökéletes választássá teszik
-                        kompetitív játékosok számára is.
-                    </p>
-                    <p>
-                        Ár: 19 990 Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
+    {{-- Termékek kategóriánként --}}
+    @foreach($categories as $category)
+        <section class="product-section">
+            <h3>{{ $category->name }}</h3>
+            <div class="card-container">
+                @foreach($products->where('category_id', $category->id) as $product)
+                    <div class="mycard">
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ $product->name }}</h2>
+    
+                            <div class="description-box">
+                                <p class="card-text">{{ $product->description }}</p>
+                            </div>
 
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">BlazeDragon Inferno FX</h2>
-                    <p class="card-text">
-                        Tűzvörös, részletesen kidolgozott sárkánymintával ellátott prémium gamer egér, amely brutális
-                        megjelenést és megbízható teljesítményt nyújt. A 16 000 DPI-s érzékelő kristálypontos követést
-                        biztosít, az RGB világítás pedig tökéletesen kiemeli a forró, lángoló design részleteit.
-                        Ergonomikus formájának köszönhetően hosszú játékmaratonok alatt is kényelmes marad.
-                    </p>
-                    <p>
-                        Ár: 23 490 Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
+                            <div class="price-section">
+                                <p class="price-tag"><strong>{{ number_format($product->price, 0, ',', ' ') }} Ft</strong></p>
+                            </div>
+
+                            @auth
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <button type="submit" class="card-button">Kosárba</button>
+                                </form>
+                            @endauth
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </section>
-
-        <hr>
-        <br>
-
-        <h1>Billentyűzetek</h1>
-        <section class="card-container">
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">BlazeDragon Inferno KB</h2>
-                    <p class="card-text">
-                        A BlazeDragon Inferno FX gamer egér tökéletes társa: a BlazeDragon Inferno KB mechanikus
-                        billentyűzet ugyanazzal a tűzvörös, részletes sárkánymintával érkezik, amely különleges egységet
-                        teremt a setupban. A többzónás RGB háttérvilágítás kiemeli a lángoló design minden részletét, a
-                        tartós switch-ek pedig villámgyors reakciót biztosítanak. A masszív, prémium kivitel hosszú
-                        éveken át bírja az intenzív játékot.
-                    </p>
-                    <p>
-                        Ár: 32 990 Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-        </section>
-
-        <hr>
-        <br>
-
-        <h1>Fejhallgatók</h1>
-        <section class="card-container">
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-        </section>
-
-        <hr>
-        <br>
-
-        <h1>Játék konzolok</h1>
-        <section class="card-container">
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-
-            <div class="mycard">
-                <img src="" alt="Termék képe">
-                <div class="card-body">
-                    <h2 class="card-title">Termék neve</h2>
-                    <p class="card-text">
-                        Termék leírása
-                    </p>
-                    <p>
-                        Ár: x Ft
-                    </p>
-                    @auth
-                        <a href="#" class="card-button">Kosárba</a>
-                        @else
-                            <a href="#" class="card-button" style="background-color: #555; cursor: pointer;">Kosárba</a>  
-                    @endauth
-                </div>
-            </div>
-        </section>
-    </main>
+    @endforeach
+</main>
 @endsection

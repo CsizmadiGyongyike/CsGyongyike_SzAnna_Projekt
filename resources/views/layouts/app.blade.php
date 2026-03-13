@@ -11,16 +11,12 @@
 <body>
     <header>
         <div class="auth-buttons">
-            <a href="" class="cart-btn">
-                Kosár
-            </a>
-            
             @auth
-                <form action="{{route("logout")}}" method="POST">
+                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                     @csrf
-                    <button class="like-a-tag">Kijelentkezés</button>
+                    <button type="submit" class="modal-button" style="background:none; border:none; color:#3cff39; cursor:pointer;">Kijelentkezés</button>
                 </form>
-                @else
+            @else
                 <a href="{{route("login")}}" class="modal-button">Bejelentkezés</a>
                 <a href="{{route("register")}}" class="modal-button">Regisztráció</a>
             @endauth
@@ -28,30 +24,24 @@
         <nav>
             <ul>
                 <li><a href="{{route("welcome")}}">Főoldal</a></li>
-                <li><a href="{{ route('category.index') }}">Kategóriák</a></li>
+                <li><a href="{{ route('product.index') }}">Termékek</a></li>
                 <li><a href="{{route("pages.rolunk")}}">Rólunk</a></li>
                 <li><a href="{{route("pages.kapcsolat")}}">Kapcsolat</a></li>
             </ul>
         </nav>
-        
     </header>
 
-    @if(Route::is('welcome'))
-        <section class="welcome">
-            <main>
-                <section class="welcome" style="padding: 60px 20px;">
-                    <h2 style="color: #c3ff00; font-size: 3rem;">ÜDVÖZÖL A CTRL+VIBE!</h2>
-                    <p style="font-size: 1.2rem;">A legmenőbb gamer cuccok egy helyen.</p>
-                    <a href="{{ route('category.index') }}" class="modal-button" style="text-decoration: none; display: inline-block; margin-top: 20px;">Böngéssz a kínálatban</a>
-                </section>
-            </main>
-        </section>
-    @endif
-
-    @yield("content")
+    @yield('content')
 
     <footer>
-        <p>&copy; 2026 CTRL+Vibe Gamer Webshop</p>
+        <p>&copy; 2024 CTRL+Vibe. Minden jog fenntartva.</p>
     </footer>
+
+    <a href="{{ route('cart.index') }}" class="floating-cart">
+        Kosár
+        @if(session('cart') && count(session('cart')) > 0)
+            <span class="cart-count">{{ count(session('cart')) }}</span>
+        @endif
+    </a>
 </body>
 </html>
