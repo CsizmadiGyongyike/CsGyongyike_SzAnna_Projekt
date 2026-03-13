@@ -232,15 +232,6 @@ class ProductSeeder extends Seeder
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
-            ],
-            [
-                "name" => "Pulsar X2 Mini",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 40999,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
             ]
         ]);
     }
