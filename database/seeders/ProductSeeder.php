@@ -232,6 +232,96 @@ class ProductSeeder extends Seeder
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
+            ],
+            [
+                "name" => "Logitech Pro X",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 37990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "SteelSeries Arctis 1",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 41750,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Sennheiser HD 820",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 52990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Logitech G332",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 47990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Razer Barracuda X",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 35499,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Asus ROG Delta",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 41500,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Logitech G335",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 36790,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "HP HyperX Cloud Orbit S",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 78500,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Corsair HS60 HAPTIC",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 26900,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Corsair HS55",
+                "category_id" => 3,
+                "description" => "",
+                "price" => 33499,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
             ]
         ]);
     }
