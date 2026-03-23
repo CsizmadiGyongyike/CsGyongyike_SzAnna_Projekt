@@ -92,8 +92,7 @@ class CartController extends Controller
 
         } catch (\Exception $e) {
             DB::rollBack();
-            return dd($e->getMessage());
-            //return redirect()->back()->with('error', 'Hiba történt a rendelés során: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Hiba történt a rendelés során: ' . $e->getMessage());
         }
     }
 }
