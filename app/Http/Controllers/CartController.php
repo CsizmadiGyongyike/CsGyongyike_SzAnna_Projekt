@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Order;
+use App\Models\OrderItem;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -55,5 +59,41 @@ class CartController extends Controller
         }
 
         return redirect()->back()->with('showCart', true);
+    }
+
+    public function checkout(){
+        $cart = session()->get('cart', []);
+
+        if (empty($cart)) {
+            return redirect()->back()->with('error', 'Üres a kosarad!');
+        }
+
+        try {
+            DB::beginTransaction();
+
+            $order = Order::create([
+            'user_id'    => Auth::id(),
+            'order_time' => now(),
+            'status'     => 'Feldolgozás alatt',
+            'amount'     => array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart)),
+            ]);
+
+            foreach ($cart as $id => $details) {
+            OrderItem::create([
+                'order_id'   => $order->id,
+                'product_id' => $id,
+                'quantity'   => $details['quantity'],
+                'unit_price' => $details['price'],
+            ]);}
+
+            DB::commit();
+            session()->forget('cart');
+            return redirect()->route('product.index')->with('success', 'Rendelésedet sikeresen rögzítettük!');
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return dd($e->getMessage());
+            //return redirect()->back()->with('error', 'Hiba történt a rendelés során: ' . $e->getMessage());
+        }
     }
 }

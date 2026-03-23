@@ -31,7 +31,24 @@
         </nav>
     </header>
 
-    @yield('content')
+    <main>
+        @yield('content')
+        <div class="container mt-3">
+    {{-- Sikeres művelet üzenete --}}
+    @if(session('success'))
+        <div class="alert alert-success" style="background-color: #3cff39; color: black; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-weight: bold;">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    {{-- Hibaüzenet (ha pl. üres a kosár) --}}
+    @if(session('error'))
+        <div class="alert alert-danger" style="background-color: #ff4444; color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-weight: bold;">
+            {{ session('error') }}
+        </div>
+    @endif
+</div>
+    </main>
 
     <footer>
         <p>&copy; 2024 CTRL+Vibe. Minden jog fenntartva.</p>
