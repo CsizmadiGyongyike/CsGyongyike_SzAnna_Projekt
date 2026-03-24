@@ -23,7 +23,6 @@
                             <td style="padding: 15px;">{{ $details['name'] }}</td>
                             <td style="padding: 15px;">{{ number_format($details['price'], 0, ',', ' ') }} Ft</td>
                             <td style="padding: 15px;">
-                                {{-- Mennyiség módosítása --}}
                                 <form action="{{ route('cart.update', $id) }}" method="POST">
                                     @csrf
                                     @method('PATCH')
@@ -33,7 +32,6 @@
                                 </form>
                             </td>
                             <td style="padding: 15px;">
-                                {{-- Törlés gomb --}}
                                 <form action="{{ route('cart.destroy', $id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -48,7 +46,10 @@
             <div style="margin-top: 30px; text-align: right;">
                 <h2 style="color: #3cff39;">Összesen: {{ number_format($total, 0, ',', ' ') }} Ft</h2>
                 <a href="{{ route('product.index') }}" class="modal-button" style="text-decoration: none; background: #444;">Vásárlás folytatása</a>
-                <button class="modal-button" style="border: none; cursor: pointer;">Fizetés</button>
+<form action="{{ route('cart.checkout') }}" method="POST">
+    @csrf
+    <button type="submit" class="modal-button">Fizetés</button>
+</form>
             </div>
         @else
             <div style="text-align: center; padding: 40px;">

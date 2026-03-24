@@ -31,7 +31,20 @@
         </nav>
     </header>
 
-    @yield('content')
+    <main>
+        @if(session('success'))
+    <div style="background-color: #3cff39; color: black; padding: 15px; margin: 20px; text-align: center; font-weight: bold; border-radius: 8px;">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div style="background-color: #ff4444; color: white; padding: 15px; margin: 20px; text-align: center; font-weight: bold; border-radius: 8px;">
+        {{ session('error') }}
+    </div>
+@endif
+        @yield('content')
+    </main>
 
     <footer>
         <p>&copy; 2024 CTRL+Vibe. Minden jog fenntartva.</p>

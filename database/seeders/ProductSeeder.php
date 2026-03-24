@@ -50,275 +50,245 @@ class ProductSeeder extends Seeder
                 "updated_at" => now()
             ],
             [
-                "name" => "Logitech G915 Lightspeed",
+                "name" => "ClickFast USB",
                 "category_id" => 1,
-                "description" => "",
-                "price" => 22990,
+                "description" => "Egyszerű vezetékes egér.",
+                "price" => 2990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Redragon S113",
+                "name" => "SpeedTrack X",
                 "category_id" => 1,
-                "description" => "",
-                "price" => 23499,
+                "description" => "Gyors mozgású gamer egér.",
+                "price" => 14990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Keychron K2 V2 Aluminum",
+                "name" => "OfficePoint Lite",
                 "category_id" => 1,
-                "description" => "",
+                "description" => "Megbízható irodai eszköz.",
+                "price" => 3990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "UltraSense Pro",
+                "category_id" => 1,
+                "description" => "Nagy pontosságú szenzor.",
+                "price" => 17990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "TravelMouse Mini",
+                "category_id" => 1,
+                "description" => "Kompakt utazó egér.",
+                "price" => 5990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "MultiClick 7G",
+                "category_id" => 1,
+                "description" => "Többgombos produktivitási egér.",
+                "price" => 13990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "AirMove Wireless",
+                "category_id" => 1,
+                "description" => "Vezeték nélküli egér hosszú üzemidővel.",
+                "price" => 8990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "HyperSound X100",
+                "category_id" => 2,
+                "description" => "Zajszűrős, kényelmes fejhallgató.",
+                "price" => 18990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "ProBass Wireless",
+                "category_id" => 2,
+                "description" => "Vezeték nélküli, erős basszus.",
                 "price" => 25990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Logitech Wireless Combo MK270",
-                "category_id" => 1,
-                "description" => "",
+                "name" => "StudioSound Pro",
+                "category_id" => 2,
+                "description" => "Stúdió minőségű hangzás.",
+                "price" => 34990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "LiteBeat H20",
+                "category_id" => 2,
+                "description" => "Könnyű, hordozható fejhallgató.",
+                "price" => 12990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "NoiseBlocker 500",
+                "category_id" => 2,
+                "description" => "Aktív zajszűrés utazáshoz.",
+                "price" => 39990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "GameZone HX",
+                "category_id" => 2,
+                "description" => "Gamer headset mikrofonnal.",
                 "price" => 21990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Corsair K65 RGB MINI",
-                "category_id" => 1,
-                "description" => "",
-                "price" => 22499,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Asus ROG Strix Flare II Animate",
-                "category_id" => 1,
-                "description" => "",
-                "price" => 23999,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Razer BlackWidow V3",
-                "category_id" => 1,
-                "description" => "",
-                "price" => 23499,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Razer DeathStalker V2 Pro",
-                "category_id" => 1,
-                "description" => "",
-                "price" => 26999,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Corsair K55 RGB PRO XT",
-                "category_id" => 1,
-                "description" => "",
-                "price" => 24499,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "BlazeDragon Inferno KB",
+                "name" => "UrbanSound Mini",
                 "category_id" => 2,
-                "description" => "A BlazeDragon Inferno FX gamer egér tökéletes társa: a BlazeDragon Inferno KB mechanikus
-                        billentyűzet ugyanazzal a tűzvörös, részletes sárkánymintával érkezik, amely különleges egységet
-                        teremt a setupban. A többzónás RGB háttérvilágítás kiemeli a lángoló design minden részletét, a
-                        tartós switch-ek pedig villámgyors reakciót biztosítanak. A masszív, prémium kivitel hosszú
-                        éveken át bírja az intenzív játékot.",
-                "price" => 32990,
+                "description" => "Stílusos, utcai használatra.",
+                "price" => 9990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "SteelSeries Sensei Ten",
+                "name" => "DeepAudio Max",
                 "category_id" => 2,
-                "description" => "",
-                "price" => 34999,
+                "description" => "Erőteljes hangzás zenehallgatáshoz.",
+                "price" => 27990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Cooler Master MM720 Glossy",
+                "name" => "ClearTone BT",
                 "category_id" => 2,
-                "description" => "",
-                "price" => 35499,
+                "description" => "Bluetooth fejhallgató tiszta hanggal.",
+                "price" => 23990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "HP HyperX Pulsefire Haste",
+                "name" => "ComfortWear 300",
                 "category_id" => 2,
-                "description" => "",
-                "price" => 29999,
+                "description" => "Extra párnázott kialakítás.",
+                "price" => 19990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "MSI CLUTCH GM30",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 31499,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Asus TUF Gaming M4 Wireless",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 29999,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Asus ROG GLADIUS II ORIGIN PNK LTD",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 32599,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Asus ROG Gladius II Origin",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 37699,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Razer DeathAdder",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 38499,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Asus P705 ROG PUGIO II",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 37899,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Pulsar X2 Mini",
-                "category_id" => 2,
-                "description" => "",
-                "price" => 35499,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "Logitech Pro X",
+                "name" => "KeyMaster 104",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 37990,
+                "description" => "Teljes méretű billentyűzet.",
+                "price" => 7990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "SteelSeries Arctis 1",
+                "name" => "MechaType RGB",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 41750,
+                "description" => "Mechanikus RGB billentyűzet.",
+                "price" => 29990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Sennheiser HD 820",
+                "name" => "SlimKey Wireless",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 52990,
+                "description" => "Vékony, vezeték nélküli modell.",
+                "price" => 10990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Logitech G332",
+                "name" => "OfficeKeys Basic",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 47990,
+                "description" => "Egyszerű irodai billentyűzet.",
+                "price" => 4990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Razer Barracuda X",
+                "name" => "ProType Mechanical",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 35499,
+                "description" => "Professzionális mechanikus billentyűzet.",
+                "price" => 34990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Asus ROG Delta",
+                "name" => "SilentKeys Soft",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 41500,
+                "description" => "Halk gépelésre optimalizált.",
+                "price" => 8990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Logitech G335",
+                "name" => "Compact60 Mini",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 36790,
+                "description" => "60%-os kompakt kialakítás.",
+                "price" => 19990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "HP HyperX Cloud Orbit S",
+                "name" => "GameBoard X",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 78500,
+                "description" => "Gamer billentyűzet makrókkal.",
+                "price" => 24990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Corsair HS60 HAPTIC",
+                "name" => "ErgoBoard Split",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 26900,
+                "description" => "Ergonomikus,
+                osztott kialakítás.",
+                "price" => 27990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
             [
-                "name" => "Corsair HS55",
+                "name" => "Backlit Pro HU",
                 "category_id" => 3,
-                "description" => "",
-                "price" => 33499,
+                "description" => "Háttérvilágításos magyar kiosztás.",
+                "price" => 15990,
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
