@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $orders = Order::with('orderItems.product')->orderBy('order_time', 'desc')->get();
+        if ($request->wantsJson()) return response()->json($orders);
+
+        return view('orders.index', compact('orders'));
     }
 
     /**
@@ -53,7 +57,10 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
-        //
+        $order->update($request->only('status'));
+        if ($request->wantsJson()) return response()->json($order);
+
+        return redirect()->back()->with('success', 'Állapot frissítve!');
     }
 
     /**

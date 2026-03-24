@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\CartController;
+use App\Models\User;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
@@ -20,23 +21,10 @@ Route::get('/kapcsolat', function () {
 })->name('pages.kapcsolat');
 
 
-
-/*Route::resource("/category", CategoryController::class);
-Route::resource("/order", OrderController::class);
-Route::resource("/orderItem", OrderItemController::class);
-Route::resource("/product", ProductController::class);*/
-
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-
-/*Route::prefix('cart')->name('cart.')->group(function() {
-    Route::get('/', [CartController::class, 'index'])->name('index');
-    Route::post('/', [CartController::class, 'store'])->name('store');
-    Route::patch('/{id}', [CartController::class, 'update'])->name('update');
-    Route::delete('/{id}', [CartController::class, 'destroy'])->name('destroy');
-});*/
 
 Route::middleware(['auth'])->group(function () {
 
@@ -52,3 +40,15 @@ Route::middleware(['auth'])->group(function () {
     Route::resource("orderItem", OrderItemController::class);
     Route::resource("product", ProductController::class)->except(['index']);
 });
+
+/*Route::get('/admin-fix', function () {
+    $user = User::where('email', 'admin@example.com')->first();
+
+    if ($user) {
+        $user->is_admin = true;
+        $user->save();
+        return "Siker! Az " . $user->email . " felhasználó mostantól Admin.";
+    }
+
+    return "Hiba: Nem található ilyen email cím az adatbázisban.";
+});*/

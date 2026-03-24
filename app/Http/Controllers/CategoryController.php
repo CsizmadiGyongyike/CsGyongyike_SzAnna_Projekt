@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
+        if ($request->wantsJson()) {
+            return response()->json($categories);
+        }
         return view("categories.index", ["categories" => $categories]);
     }
 
@@ -30,7 +34,10 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $category = Category::create($request->validated());
+        if ($request->wantsJson()) return response()->json($category, 201);
+
+        return redirect()->route('category.index');
     }
 
     /**

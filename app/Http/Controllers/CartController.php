@@ -34,7 +34,7 @@ class CartController extends Controller
             ];
         }
         session()->put('cart', $cart);
-        return redirect()->back()->with('showCart', true)->with('success', 'Termék hozzáadva!');
+        return redirect()->back()->with('showCart', true)->with('success', 'Termék a kosárban!');
     }
 
     public function update(Request $request, string $id)
@@ -84,7 +84,8 @@ class CartController extends Controller
                 'product_id' => $id,
                 'quantity'   => $details['quantity'],
                 'unit_price' => $details['price'],
-            ]);}
+            ]);
+            }
 
             DB::commit();
             session()->forget('cart');
