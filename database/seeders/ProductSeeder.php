@@ -113,98 +113,8 @@ class ProductSeeder extends Seeder
                 "updated_at" => now()
             ],
             [
-                "name" => "HyperSound X100",
-                "category_id" => 2,
-                "description" => "Zajszűrős, kényelmes fejhallgató.",
-                "price" => 18990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "ProBass Wireless",
-                "category_id" => 2,
-                "description" => "Vezeték nélküli, erős basszus.",
-                "price" => 25990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "StudioSound Pro",
-                "category_id" => 2,
-                "description" => "Stúdió minőségű hangzás.",
-                "price" => 34990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "LiteBeat H20",
-                "category_id" => 2,
-                "description" => "Könnyű, hordozható fejhallgató.",
-                "price" => 12990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "NoiseBlocker 500",
-                "category_id" => 2,
-                "description" => "Aktív zajszűrés utazáshoz.",
-                "price" => 39990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "GameZone HX",
-                "category_id" => 2,
-                "description" => "Gamer headset mikrofonnal.",
-                "price" => 21990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "UrbanSound Mini",
-                "category_id" => 2,
-                "description" => "Stílusos, utcai használatra.",
-                "price" => 9990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "DeepAudio Max",
-                "category_id" => 2,
-                "description" => "Erőteljes hangzás zenehallgatáshoz.",
-                "price" => 27990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "ClearTone BT",
-                "category_id" => 2,
-                "description" => "Bluetooth fejhallgató tiszta hanggal.",
-                "price" => 23990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
-                "name" => "ComfortWear 300",
-                "category_id" => 2,
-                "description" => "Extra párnázott kialakítás.",
-                "price" => 19990,
-                "stock" => 0,
-                "created_at" => now(),
-                "updated_at" => now()
-            ],
-            [
                 "name" => "KeyMaster 104",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Teljes méretű billentyűzet.",
                 "price" => 7990,
                 "stock" => 0,
@@ -213,7 +123,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "MechaType RGB",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Mechanikus RGB billentyűzet.",
                 "price" => 29990,
                 "stock" => 0,
@@ -222,7 +132,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "SlimKey Wireless",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Vékony, vezeték nélküli modell.",
                 "price" => 10990,
                 "stock" => 0,
@@ -231,7 +141,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "OfficeKeys Basic",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Egyszerű irodai billentyűzet.",
                 "price" => 4990,
                 "stock" => 0,
@@ -240,7 +150,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "ProType Mechanical",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Professzionális mechanikus billentyűzet.",
                 "price" => 34990,
                 "stock" => 0,
@@ -249,7 +159,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "SilentKeys Soft",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Halk gépelésre optimalizált.",
                 "price" => 8990,
                 "stock" => 0,
@@ -258,7 +168,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Compact60 Mini",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "60%-os kompakt kialakítás.",
                 "price" => 19990,
                 "stock" => 0,
@@ -267,7 +177,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "GameBoard X",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Gamer billentyűzet makrókkal.",
                 "price" => 24990,
                 "stock" => 0,
@@ -276,7 +186,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "ErgoBoard Split",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Ergonomikus,
                 osztott kialakítás.",
                 "price" => 27990,
@@ -286,10 +196,181 @@ class ProductSeeder extends Seeder
             ],
             [
                 "name" => "Backlit Pro HU",
-                "category_id" => 3,
+                "category_id" => 2,
                 "description" => "Háttérvilágításos magyar kiosztás.",
                 "price" => 15990,
                 "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "HyperSound X100",
+                "category_id" => 3,
+                "description" => "Zajszűrős, kényelmes fejhallgató.",
+                "price" => 18990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "ProBass Wireless",
+                "category_id" => 3,
+                "description" => "Vezeték nélküli, erős basszus.",
+                "price" => 25990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "StudioSound Pro",
+                "category_id" => 3,
+                "description" => "Stúdió minőségű hangzás.",
+                "price" => 34990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "LiteBeat H20",
+                "category_id" => 3,
+                "description" => "Könnyű, hordozható fejhallgató.",
+                "price" => 12990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "NoiseBlocker 500",
+                "category_id" => 3,
+                "description" => "Aktív zajszűrés utazáshoz.",
+                "price" => 39990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "GameZone HX",
+                "category_id" => 3,
+                "description" => "Gamer headset mikrofonnal.",
+                "price" => 21990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "UrbanSound Mini",
+                "category_id" => 3,
+                "description" => "Stílusos, utcai használatra.",
+                "price" => 9990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "DeepAudio Max",
+                "category_id" => 3,
+                "description" => "Erőteljes hangzás zenehallgatáshoz.",
+                "price" => 27990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "ClearTone BT",
+                "category_id" => 3,
+                "description" => "Bluetooth fejhallgató tiszta hanggal.",
+                "price" => 23990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "ComfortWear 300",
+                "category_id" => 3,
+                "description" => "Extra párnázott kialakítás.",
+                "price" => 19990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "ProControl X",
+                "category_id" => 4,
+                "description" => "Ergonomikus kialakítású vezeték nélküli kontroller állítható gombokkal és rezgésfunkcióval.",
+                "price" => 24990,
+                "stock" => 0,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "GamePad Elite",
+                "category_id" => 4,
+                "description" => "Prémium kontroller cserélhető joystickokkal és testreszabható profilokkal.",
+                "price" => 29990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "RetroStick Classic",
+                "category_id" => 4,
+                "description" => "Klasszikus dizájnú kontroller retro játékokhoz, egyszerű kezeléssel.",
+                "price" => 9990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "UltraGrip Controller",
+                "category_id" => 4,
+                "description" => "Csúszásmentes bevonattal ellátott kontroller hosszú játékmenetekhez.",
+                "price" => 19990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "FusionPad Wireless",
+                "category_id" => 4,
+                "description" => "Vezeték nélküli kontroller gyors csatlakozással és alacsony késleltetéssel.",
+                "price" => 17990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "Arcade Pro Stick",
+                "category_id" => 4,
+                "description" => "Arcade stílusú joystick kontroller harci játékokhoz és profi használatra.",
+                "price" => 34990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "LiteControl Mini",
+                "category_id" => 4,
+                "description" => "Kompakt méretű kontroller kisebb kezekhez vagy utazáshoz ideális.",
+                "price" => 12990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "NextGen TouchPad",
+                "category_id" => 4,
+                "description" => "Beépített érintőpaddal és mozgásérzékeléssel rendelkező modern kontroller.",
+                "price" => 27990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "DualPlay Controller",
+                "category_id" => 4,
+                "description" => "Két eszközzel is párosítható kontroller gyors váltási lehetőséggel.",
+                "price" => 21990,
+                "created_at" => now(),
+                "updated_at" => now()
+            ],
+            [
+                "name" => "PowerGrip Turbo",
+                "category_id" => 4,
+                "description" => "Turbo gombokkal ellátott kontroller gyors reakciót igénylő játékokhoz.",
+                "price" => 18990,
                 "created_at" => now(),
                 "updated_at" => now()
             ]
