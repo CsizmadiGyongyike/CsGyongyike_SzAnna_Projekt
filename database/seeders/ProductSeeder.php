@@ -307,6 +307,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Prémium kontroller cserélhető joystickokkal és testreszabható profilokkal.",
                 "price" => 29990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -315,6 +316,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Klasszikus dizájnú kontroller retro játékokhoz, egyszerű kezeléssel.",
                 "price" => 9990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -323,6 +325,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Csúszásmentes bevonattal ellátott kontroller hosszú játékmenetekhez.",
                 "price" => 19990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -331,6 +334,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Vezeték nélküli kontroller gyors csatlakozással és alacsony késleltetéssel.",
                 "price" => 17990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -339,6 +343,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Arcade stílusú joystick kontroller harci játékokhoz és profi használatra.",
                 "price" => 34990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -347,6 +352,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Kompakt méretű kontroller kisebb kezekhez vagy utazáshoz ideális.",
                 "price" => 12990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -363,6 +369,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Két eszközzel is párosítható kontroller gyors váltási lehetőséggel.",
                 "price" => 21990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -371,6 +378,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Turbo gombokkal ellátott kontroller gyors reakciót igénylő játékokhoz.",
                 "price" => 18990,
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ]
