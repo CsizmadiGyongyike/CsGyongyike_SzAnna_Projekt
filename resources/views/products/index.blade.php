@@ -2,13 +2,11 @@
 
 @section('content')
     <main>
-    {{-- Ide költöztesd át az üdvözlő szöveget a app.blade.php-ből, ha szeretnéd --}}
     <section class="welcome-hero" style="text-align: center; padding: 40px;">
         <h1>ÜDVÖZÖL A CTRL+VIBE!</h1>
         <p>A legmenőbb gamer cuccok egy helyen.</p>
     </section>
 
-    {{-- Termékek kategóriánként --}}
     @foreach($categories as $category)
         <section class="product-section">
             <h3>{{ $category->name }}</h3>

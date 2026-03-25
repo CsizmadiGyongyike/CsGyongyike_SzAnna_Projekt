@@ -16,7 +16,6 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $products = Product::all();
-        //$categories = \App\Models\Category::all();
         if ($request->wantsJson()) {
             return response()->json($products);
         }
