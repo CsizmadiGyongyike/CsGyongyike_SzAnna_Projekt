@@ -21,6 +21,7 @@ class ProductSeeder extends Seeder
                         DPI érzékelővel. Kiemelkedő tartósság, csúszásmentes felület és látványos design hardcore
                         gamereknek.",
                 "price" => 22490,
+                "image" => "images/eger1.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -33,6 +34,7 @@ class ProductSeeder extends Seeder
                         programozható oldalsó gombjai és a könnyű, ergonomikus kialakítás tökéletes választássá teszik
                         kompetitív játékosok számára is.",
                 "price" => 19990,
+                "image" => "images/eger2.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -46,6 +48,7 @@ class ProductSeeder extends Seeder
                         Ergonomikus formájának köszönhetően hosszú játékmaratonok alatt is kényelmes marad.",
                 "price" => 23490,
                 "stock" => 0,
+                "image" => "images/eger3.png",
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -54,6 +57,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "description" => "Egyszerű vezetékes egér.",
                 "price" => 2990,
+                "image" => "images/eger4.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -63,6 +67,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "description" => "Gyors mozgású gamer egér.",
                 "price" => 14990,
+                "image" => "images/eger5.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -72,6 +77,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "description" => "Megbízható irodai eszköz.",
                 "price" => 3990,
+                "image" => "images/eger6.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -81,6 +87,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "description" => "Nagy pontosságú szenzor.",
                 "price" => 17990,
+                "image" => "images/eger7.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -90,6 +97,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "description" => "Kompakt utazó egér.",
                 "price" => 5990,
+                "image" => "images/eger8.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -99,6 +107,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "description" => "Többgombos produktivitási egér.",
                 "price" => 13990,
+                "image" => "images/eger9.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -108,6 +117,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 1,
                 "description" => "Vezeték nélküli egér hosszú üzemidővel.",
                 "price" => 8990,
+                "image" => "images/eger10.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -117,6 +127,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Teljes méretű billentyűzet.",
                 "price" => 7990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -126,6 +137,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Mechanikus RGB billentyűzet.",
                 "price" => 29990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -135,6 +147,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Vékony, vezeték nélküli modell.",
                 "price" => 10990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -144,6 +157,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Egyszerű irodai billentyűzet.",
                 "price" => 4990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -153,6 +167,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Professzionális mechanikus billentyűzet.",
                 "price" => 34990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -162,6 +177,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Halk gépelésre optimalizált.",
                 "price" => 8990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -171,6 +187,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "60%-os kompakt kialakítás.",
                 "price" => 19990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -180,6 +197,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Gamer billentyűzet makrókkal.",
                 "price" => 24990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -190,6 +208,7 @@ class ProductSeeder extends Seeder
                 "description" => "Ergonomikus,
                 osztott kialakítás.",
                 "price" => 27990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -199,6 +218,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Háttérvilágításos magyar kiosztás.",
                 "price" => 15990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -208,6 +228,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Zajszűrős, kényelmes fejhallgató.",
                 "price" => 18990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -217,6 +238,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Vezeték nélküli, erős basszus.",
                 "price" => 25990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -226,6 +248,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Stúdió minőségű hangzás.",
                 "price" => 34990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -235,6 +258,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Könnyű, hordozható fejhallgató.",
                 "price" => 12990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -244,6 +268,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Aktív zajszűrés utazáshoz.",
                 "price" => 39990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -253,6 +278,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Gamer headset mikrofonnal.",
                 "price" => 21990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -262,6 +288,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Stílusos, utcai használatra.",
                 "price" => 9990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -271,6 +298,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Erőteljes hangzás zenehallgatáshoz.",
                 "price" => 27990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -280,6 +308,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Bluetooth fejhallgató tiszta hanggal.",
                 "price" => 23990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -289,6 +318,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Extra párnázott kialakítás.",
                 "price" => 19990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -298,6 +328,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Ergonomikus kialakítású vezeték nélküli kontroller állítható gombokkal és rezgésfunkcióval.",
                 "price" => 24990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -307,6 +338,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Prémium kontroller cserélhető joystickokkal és testreszabható profilokkal.",
                 "price" => 29990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -316,6 +348,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Klasszikus dizájnú kontroller retro játékokhoz, egyszerű kezeléssel.",
                 "price" => 9990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -325,6 +358,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Csúszásmentes bevonattal ellátott kontroller hosszú játékmenetekhez.",
                 "price" => 19990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -334,6 +368,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Vezeték nélküli kontroller gyors csatlakozással és alacsony késleltetéssel.",
                 "price" => 17990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -343,6 +378,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Arcade stílusú joystick kontroller harci játékokhoz és profi használatra.",
                 "price" => 34990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -352,6 +388,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Kompakt méretű kontroller kisebb kezekhez vagy utazáshoz ideális.",
                 "price" => 12990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -361,6 +398,8 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Beépített érintőpaddal és mozgásérzékeléssel rendelkező modern kontroller.",
                 "price" => 27990,
+                "image" => "images/default.png",
+                "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -369,6 +408,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Két eszközzel is párosítható kontroller gyors váltási lehetőséggel.",
                 "price" => 21990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -378,6 +418,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 4,
                 "description" => "Turbo gombokkal ellátott kontroller gyors reakciót igénylő játékokhoz.",
                 "price" => 18990,
+                "image" => "images/default.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()

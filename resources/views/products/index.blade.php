@@ -13,7 +13,7 @@
             <div class="card-container">
                 @foreach($products->where('category_id', $category->id) as $product)
                     <div class="mycard">
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}">
                         <div class="card-body">
                             <h2 class="card-title">{{ $product->name }}</h2>
     
