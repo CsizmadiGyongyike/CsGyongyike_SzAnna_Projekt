@@ -127,7 +127,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Teljes méretű billentyűzet.",
                 "price" => 7990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet1.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -137,7 +137,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Mechanikus RGB billentyűzet.",
                 "price" => 29990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet2.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -147,7 +147,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Vékony, vezeték nélküli modell.",
                 "price" => 10990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet3.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -157,7 +157,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Egyszerű irodai billentyűzet.",
                 "price" => 4990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet4.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -167,7 +167,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Professzionális mechanikus billentyűzet.",
                 "price" => 34990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet5.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -177,7 +177,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Halk gépelésre optimalizált.",
                 "price" => 8990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet6.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -187,7 +187,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "60%-os kompakt kialakítás.",
                 "price" => 19990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet7.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -197,7 +197,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Gamer billentyűzet makrókkal.",
                 "price" => 24990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet8.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -208,7 +208,7 @@ class ProductSeeder extends Seeder
                 "description" => "Ergonomikus,
                 osztott kialakítás.",
                 "price" => 27990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet9.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -218,7 +218,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 2,
                 "description" => "Háttérvilágításos magyar kiosztás.",
                 "price" => 15990,
-                "image" => "images/default.png",
+                "image" => "images/billentyuzet10.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
