@@ -228,7 +228,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Zajszűrős, kényelmes fejhallgató.",
                 "price" => 18990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato1.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -238,7 +238,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Vezeték nélküli, erős basszus.",
                 "price" => 25990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato2.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -248,7 +248,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Stúdió minőségű hangzás.",
                 "price" => 34990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato3.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -258,7 +258,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Könnyű, hordozható fejhallgató.",
                 "price" => 12990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato4.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -268,7 +268,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Aktív zajszűrés utazáshoz.",
                 "price" => 39990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato5.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -278,7 +278,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Gamer headset mikrofonnal.",
                 "price" => 21990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato6.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -288,7 +288,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Stílusos, utcai használatra.",
                 "price" => 9990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato7.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -298,7 +298,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Erőteljes hangzás zenehallgatáshoz.",
                 "price" => 27990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato8.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -308,7 +308,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Bluetooth fejhallgató tiszta hanggal.",
                 "price" => 23990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato9.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
@@ -318,7 +318,7 @@ class ProductSeeder extends Seeder
                 "category_id" => 3,
                 "description" => "Extra párnázott kialakítás.",
                 "price" => 19990,
-                "image" => "images/default.png",
+                "image" => "images/fejhallgato10.png",
                 "stock" => 0,
                 "created_at" => now(),
                 "updated_at" => now()
