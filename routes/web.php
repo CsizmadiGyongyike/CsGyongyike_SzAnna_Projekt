@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
 use App\Models\User;
 use App\Http\Controllers\HomeController;
 
@@ -39,6 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource("order", OrderController::class);
     Route::resource("orderItem", OrderItemController::class);
     Route::resource("product", ProductController::class)->except(['index']);
+
+    Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 });
 
 /*Route::get('/admin-fix', function () {
