@@ -30,7 +30,7 @@ class CategorySeeder extends Seeder
                 "updated_at" => now()
             ],
             [
-                "name" => "Játék konzol",
+                "name" => "Kontroller",
                 "created_at" => now(),
                 "updated_at" => now()
             ]

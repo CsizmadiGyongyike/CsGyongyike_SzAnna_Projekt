@@ -240,15 +240,6 @@ p {
 }
 
 .mycard {
-    /*width: 300px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #00ff4c;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00ff4c;
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #272727;*/
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -260,7 +251,7 @@ p {
 
 .mycard img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
