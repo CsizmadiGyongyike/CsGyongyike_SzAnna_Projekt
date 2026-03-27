@@ -37,6 +37,7 @@
                 @endforeach
             </div>
         </section>
+        <hr class="category-divider">
     @endforeach
 </main>
 @endsection
