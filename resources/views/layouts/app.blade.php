@@ -17,17 +17,21 @@
                     <button type="submit" class="modal-button" style="background:none; border:none; color:#3cff39; cursor:pointer;">Kijelentkezés</button>
                 </form>
             @else
-                <a href="{{route("login")}}" class="modal-button">Bejelentkezés</a>
-                <a href="{{route("register")}}" class="modal-button">Regisztráció</a>
+                <div class="justify-content-around row">
+                    <a href="{{route("login")}}" class="modal-button col-5">Bejelentkezés</a>
+                    <a href="{{route("register")}}" class="modal-button col-5">Regisztráció</a>
+                </div>
             @endauth
         </div>
         <nav>
-            <ul>
-                <li><a href="{{route("welcome")}}">Főoldal</a></li>
-                <li><a href="{{ route('product.index') }}">Termékek</a></li>
-                <li><a href="{{route("pages.rolunk")}}">Rólunk</a></li>
-                <li><a href="{{route("pages.kapcsolat")}}">Kapcsolat</a></li>
-            </ul>
+            <div class="row">
+                <ul>
+                    <li><a class="col-2" href="{{route("welcome")}}">Főoldal</a></li>
+                    <li><a class="col-2" href="{{ route('product.index') }}">Termékek</a></li>
+                    <li><a class="col-2" href="{{route("pages.rolunk")}}">Rólunk</a></li>
+                    <li><a class="col-2" href="{{route("pages.kapcsolat")}}">Kapcsolat</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 

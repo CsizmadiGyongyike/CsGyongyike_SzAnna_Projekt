@@ -1,6 +1,6 @@
 1. Futatjuk a `git clone https://github.com/CsizmadiGyongyike/CsGyongyike_SzAnna_Projekt.git` parancsot.
 2. Belépünk a le klonozott mappába.
-3. Futtatjuk a `composer install` és `npm install` parancsot.
+3. Futtatjuk a `composer install`, `npm install` és `composer require laravel/sanctum:*` parancsot.
 4. Létrehozzunk egy `.env` fájlt és átmásoljuk `.env.example` fájl tartalmát.
 5. Futtajuk a  `php artisan key:generate` parancsot.
 6. Ha ez megvan létrehozzuk az adatbázist `php artisan migrate` itt rányomunk a yes-re.
