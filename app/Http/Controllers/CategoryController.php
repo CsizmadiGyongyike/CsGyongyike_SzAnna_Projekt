@@ -34,10 +34,15 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        $category = Category::create($request->validated());
-        if ($request->wantsJson()) return response()->json($category, 201);
+        $request->validate([
+        'name' => 'required|string|max:255|unique:categories,name',
+    ]);
 
-        return redirect()->route('category.index');
+    Category::create([
+        'name' => $request->name
+    ]);
+
+    return redirect()->route('category.index')->with('success', 'Kategória sikeresen hozzáadva!');
     }
 
     /**
@@ -69,6 +74,11 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        if ($category->products()->count() > 0) {
+        return redirect()->back()->with('error', 'Nem törölhető kategória, amíg termékek tartoznak hozzá!');
+    }
+
+    $category->delete();
+    return redirect()->route('category.index')->with('success', 'Kategória törölve!');
     }
 }

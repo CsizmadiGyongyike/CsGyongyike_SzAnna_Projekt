@@ -8,8 +8,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Middleware\AdminMiddleware;
 use App\Models\User;
-use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('layouts.app');
@@ -36,12 +36,22 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
-    Route::resource("category", CategoryController::class);
+    /*Route::resource("category", CategoryController::class);
     Route::resource("order", OrderController::class);
     Route::resource("orderItem", OrderItemController::class);
-    Route::resource("product", ProductController::class)->except(['index']);
+    Route::resource("product", ProductController::class)->except(['index']);*/
 
     Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
+});
+
+Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
+    // Ezek a route-ok /admin/ kiegészítéssel fognak működni (pl. /admin/product)
+    Route::resource("category", CategoryController::class);
+    Route::resource("order", OrderController::class);
+    Route::resource("product", ProductController::class)->except(['index']);
+    
+    // Az orderItem-et általában nem szerkesztjük külön, de ha kell:
+    Route::resource("orderItem", OrderItemController::class);
 });
 
 /*Route::get('/admin-fix', function () {
