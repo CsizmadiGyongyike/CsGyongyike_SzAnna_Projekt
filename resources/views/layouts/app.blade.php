@@ -34,9 +34,9 @@
                     @auth
                 @if(Auth::user()->is_admin)
                     <li>
-                        <a class="col-2" href="{{ route('category.index') }}" style="color: #ffcc00; font-weight: bold; border: 1px solid #ffcc00; border-radius: 5px; padding: 2px 10px;">
-                            ADMIN
-                        </a>
+                        <a class="col-2" href="{{ route('admin.dashboard') }}" style="color: #ffcc00; font-weight: bold; border: 1px solid #ffcc00; border-radius: 5px; padding: 2px 10px;">
+    ADMIN
+</a>
                     </li>
                 @endif
             @endauth

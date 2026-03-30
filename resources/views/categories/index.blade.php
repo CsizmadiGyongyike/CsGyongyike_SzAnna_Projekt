@@ -3,7 +3,7 @@
 @section('content')
 <div class="container" style="padding: 50px 20px; color: white;">
     <h1 style="color: #3cff39; text-align: center; margin-bottom: 30px;">Kategóriák Kezelése</h1>
-
+    <a href="{{ route('admin.dashboard') }}" style="color: #aaa; text-decoration: none;">← Vissza az admin menübe</a>
     {{-- Új kategória hozzáadása --}}
     <div style="background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #333; margin-bottom: 30px;">
         <h4 style="color: #3cff39;">Új kategória</h4>
