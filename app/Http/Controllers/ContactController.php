@@ -7,6 +7,11 @@ use App\Models\Message;
 
 class ContactController extends Controller
 {
+    public function index(){
+        $messages = Message::orderBy('created_at', 'desc')->get();
+        return view('admin.messages.index', compact('messages'));
+    }
+
     public function store(Request $request){
         $messages = [
         'required' => 'A(z) :attribute mezőt kötelező kitölteni.',
@@ -38,5 +43,10 @@ class ContactController extends Controller
         ]);
 
         return back()->with('success', 'Köszönjük! Az üzenetet rögzítettük.');
+    }
+
+    public function destroy(Message $message){
+        $message->delete();
+        return back()->with('success', 'Üzenet törölve!');
     }
 }

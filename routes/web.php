@@ -36,30 +36,25 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
-    /*Route::resource("category", CategoryController::class);
-    Route::resource("order", OrderController::class);
-    Route::resource("orderItem", OrderItemController::class);
-    Route::resource("product", ProductController::class)->except(['index']);*/
-
     Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 });
 
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
-    // Ezek a route-ok /admin/ kiegészítéssel fognak működni (pl. /admin/product)
-    /*Route::resource("category", CategoryController::class);
-    Route::resource("order", OrderController::class);
-    Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
-    Route::resource("product", ProductController::class)->except(['index']);
-    
-    // Az orderItem-et általában nem szerkesztjük külön, de ha kell:
-    Route::resource("orderItem", OrderItemController::class);*/
-    Route::get('/', function () {
+    /*Route::get('/', function () {
         return view('admin.dashboard');
+    })->name('admin.dashboard');*/
+    Route::get('/', function () {
+        $pendingOrdersCount = \App\Models\Order::where('status', 'Feldolgozás alatt')->count();
+        $unreadMessagesCount = \App\Models\Message::count(); 
+        return view('admin.dashboard', compact('pendingOrdersCount', 'unreadMessagesCount'));
     })->name('admin.dashboard');
 
     Route::resource("category", CategoryController::class);
     Route::resource("product", ProductController::class)->names('admin.products');;
     Route::resource("order", OrderController::class);
+
+    Route::get('/messages', [ContactController::class, 'index'])->name('admin.messages.index');
+    Route::delete('/messages/{message}', [ContactController::class, 'destroy'])->name('admin.messages.destroy');
 });
 
 /*Route::get('/admin-fix', function () {
