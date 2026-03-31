@@ -6,7 +6,6 @@
     <a href="{{ route('admin.products.index') }}" style="color: #aaa; text-decoration: none;">← Vissza a listához</a>
 
     <div style="background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #333; margin-top: 20px;">
-        {{-- FONTOS: PUT metódus kell a frissítéshez! --}}
         <form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')

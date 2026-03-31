@@ -35,8 +35,8 @@
                 @if(Auth::user()->is_admin)
                     <li>
                         <a class="col-2" href="{{ route('admin.dashboard') }}" style="color: #ffcc00; font-weight: bold; border: 1px solid #ffcc00; border-radius: 5px; padding: 2px 10px;">
-    ADMIN
-</a>
+                            ADMIN
+                        </a>
                     </li>
                 @endif
             @endauth
@@ -47,16 +47,16 @@
 
     <main>
         @if(session('success'))
-    <div style="background-color: #3cff39; color: black; padding: 15px; margin: 20px; text-align: center; font-weight: bold; border-radius: 8px;">
-        {{ session('success') }}
-    </div>
-@endif
+            <div style="background-color: #3cff39; color: black; padding: 15px; margin: 20px; text-align: center; font-weight: bold; border-radius: 8px;">
+                {{ session('success') }}
+            </div>
+        @endif
 
-@if(session('error'))
-    <div style="background-color: #ff4444; color: white; padding: 15px; margin: 20px; text-align: center; font-weight: bold; border-radius: 8px;">
-        {{ session('error') }}
-    </div>
-@endif
+        @if(session('error'))
+            <div style="background-color: #ff4444; color: white; padding: 15px; margin: 20px; text-align: center; font-weight: bold; border-radius: 8px;">
+                {{ session('error') }}
+            </div>
+        @endif
         @yield('content')
     </main>
 

@@ -19,13 +19,10 @@ class ProductController extends Controller
         $categories = Category::with('products')->get();
         $products = Product::all();
 
-        // Ha az admin útvonalon vagyunk (ellenőrizzük a route nevét)
         if (request()->routeIs('admin.products.index')) {
-            // Itt fontos, hogy ha a resources/views/admin.blade.php-t használod, akkor 'admin' legyen
             return view('products.admin', compact('products', 'categories'));
         }
 
-        // Vásárlói oldal (resources/views/index.blade.php)
         return view('products.index', compact('categories', 'products'));
     }
 
@@ -36,7 +33,6 @@ class ProductController extends Controller
     {
         $data = $request->validated();
 
-        // Képkezelés: Mentés a public/images mappába
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -71,7 +67,6 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::all();
-        // Ehhez kelleni fog egy resources/views/products/edit.blade.php
         return view('products.edit', compact('product', 'categories'));
     }
 
@@ -83,7 +78,6 @@ class ProductController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('image')) {
-            // Régi kép törlése, ha létezik
             if ($product->image && File::exists(public_path($product->image))) {
                 File::delete(public_path($product->image));
             }
