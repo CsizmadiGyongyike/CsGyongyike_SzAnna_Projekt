@@ -23,6 +23,12 @@ class CartController extends Controller
         $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
 
+        $currentInCart = isset($cart[$id]) ? $cart[$id]['quantity'] : 0;
+
+        if (($currentInCart + 1) > $product->stock) {
+            return redirect()->back()->with('error', 'Sajnos nincs több készleten! (Maximum: ' . $product->stock . ' db)');
+        }
+
         if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
         } else {
@@ -40,8 +46,14 @@ class CartController extends Controller
     public function update(Request $request, string $id)
     {
         $cart = session()->get('cart');
+        $product = Product::findOrFail($id);
 
         if (isset($cart[$id]) && $request->quantity > 0) {
+
+            if ($request->quantity > $product->stock) {
+                return redirect()->back()->with('error', 'A kért mennyiség meghaladja a készletet! (Elérhető: ' . $product->stock . ' db)');
+            }
+
             $cart[$id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
         }
@@ -71,6 +83,13 @@ class CartController extends Controller
         try {
             DB::beginTransaction();
 
+            foreach ($cart as $id => $details) {
+                $product = Product::find($id);
+                if (!$product || $product->stock < $details['quantity']) {
+                    throw new \Exception("A(z) {$details['name']} időközben elfogyott vagy nincs belőle ennyi készleten!");
+                }
+            }
+
             $order = Order::create([
             'user_id'    => Auth::id(),
             'order_time' => now(),
@@ -85,6 +104,9 @@ class CartController extends Controller
                 'quantity'   => $details['quantity'],
                 'unit_price' => $details['price'],
             ]);
+                $product = Product::find($id);
+                $product->stock -= $details['quantity'];
+                $product->save();
             }
 
             DB::commit();

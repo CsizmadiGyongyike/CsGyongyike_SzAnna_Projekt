@@ -26,7 +26,7 @@ class ProductController extends Controller
         }
 
         // Vásárlói oldal (resources/views/index.blade.php)
-        return view('index', compact('categories', 'products'));
+        return view('products.index', compact('categories', 'products'));
     }
 
     /**
