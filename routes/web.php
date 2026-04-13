@@ -12,7 +12,7 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Models\User;
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('fooldal');
 })->name("welcome");
 Route::get('/rolunk', function () {
     return view('pages.rolunk');
