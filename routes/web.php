@@ -27,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
+Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -35,8 +37,6 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 
     Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
-
-    Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 });
 
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
