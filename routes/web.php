@@ -40,9 +40,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
-    /*Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');*/
     Route::get('/', function () {
         $pendingOrdersCount = \App\Models\Order::where('status', 'Feldolgozás alatt')->count();
         $unreadMessagesCount = \App\Models\Message::count(); 

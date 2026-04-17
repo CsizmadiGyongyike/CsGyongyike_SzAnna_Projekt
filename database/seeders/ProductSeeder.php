@@ -35,7 +35,7 @@ class ProductSeeder extends Seeder
                         kompetitív játékosok számára is.",
                 "price" => 19990,
                 "image" => "images/eger2.png",
-                "stock" => 0,
+                "stock" => 10,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -47,7 +47,7 @@ class ProductSeeder extends Seeder
                         biztosít, az RGB világítás pedig tökéletesen kiemeli a forró, lángoló design részleteit.
                         Ergonomikus formájának köszönhetően hosszú játékmaratonok alatt is kényelmes marad.",
                 "price" => 23490,
-                "stock" => 0,
+                "stock" => 5,
                 "image" => "images/eger3.png",
                 "created_at" => now(),
                 "updated_at" => now()
@@ -68,7 +68,7 @@ class ProductSeeder extends Seeder
                 "description" => "Gyors mozgású gamer egér.",
                 "price" => 14990,
                 "image" => "images/eger5.png",
-                "stock" => 0,
+                "stock" => 6,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -128,7 +128,7 @@ class ProductSeeder extends Seeder
                 "description" => "Teljes méretű billentyűzet.",
                 "price" => 7990,
                 "image" => "images/billentyuzet1.png",
-                "stock" => 0,
+                "stock" => 15,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
@@ -198,7 +198,7 @@ class ProductSeeder extends Seeder
                 "description" => "Gamer billentyűzet makrókkal.",
                 "price" => 24990,
                 "image" => "images/billentyuzet8.png",
-                "stock" => 0,
+                "stock" => 7,
                 "created_at" => now(),
                 "updated_at" => now()
             ],
