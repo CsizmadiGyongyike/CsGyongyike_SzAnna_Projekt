@@ -46,10 +46,10 @@
             <div style="margin-top: 30px; text-align: right;">
                 <h2 style="color: #3cff39;">Összesen: {{ number_format($total, 0, ',', ' ') }} Ft</h2>
                 <a href="{{ route('product.index') }}" class="modal-button" style="text-decoration: none; background: #444;">Vásárlás folytatása</a>
-<form action="{{ route('cart.checkout') }}" method="POST">
-    @csrf
-    <button type="submit" class="modal-button">Fizetés</button>
-</form>
+                <form action="{{ route('cart.checkout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="modal-button">Fizetés</button>
+                </form>
             </div>
         @else
             <div style="text-align: center; padding: 40px;">

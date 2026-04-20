@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -15,13 +16,33 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        $categories = Category::with('products')->get();
         $products = Product::all();
-        if ($request->wantsJson()) {
-            return response()->json($products);
+
+        if (request()->routeIs('admin.products.index')) {
+            return view('products.admin', compact('products', 'categories'));
         }
 
-        $categories = Category::all();
-        return view("products.index", compact('products', 'categories'));
+        return view('products.index', compact('categories', 'products'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreProductRequest $request)
+    {
+        $data = $request->validated();
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images'), $filename);
+            $data['image'] = 'images/' . $filename;
+        }
+
+        Product::create($data);
+
+        return redirect()->route('admin.products.index')->with('success', 'Termék sikeresen hozzáadva!');
     }
 
     /**
@@ -33,23 +54,11 @@ class ProductController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreProductRequest $request)
-    {
-        //$validated = $request->validated();
-        Product::create($request->validated());
-        if ($request->wantsJson()) {
-            return redirect()->route('product.index')->with('success', 'Termék hozzáadva!');
-        }
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -57,7 +66,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        return view('products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -65,10 +75,22 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        $product->update($request->validated());
-        if ($request->wantsJson()) return response()->json($product);
+        $data = $request->validated();
 
-        return redirect()->route('product.index')->with('success', 'Termék frissítve!');
+        if ($request->hasFile('image')) {
+            if ($product->image && File::exists(public_path($product->image))) {
+                File::delete(public_path($product->image));
+            }
+
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images'), $filename);
+            $data['image'] = 'images/' . $filename;
+        }
+
+        $product->update($data);
+
+        return redirect()->route('admin.products.index')->with('success', 'Termék sikeresen frissítve!');
     }
 
     /**
@@ -76,9 +98,12 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
-        if (request()->wantsJson()) return response()->json(['message' => 'Törölve']);
+        if ($product->image && File::exists(public_path($product->image))) {
+            File::delete(public_path($product->image));
+        }
 
-        return redirect()->route('product.index');
-    }
+        $product->delete();
+
+        return redirect()->back()->with('success', 'Termék törölve!');
+}
 }

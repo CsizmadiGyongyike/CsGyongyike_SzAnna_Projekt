@@ -8,11 +8,11 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Middleware\AdminMiddleware;
 use App\Models\User;
-use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('fooldal');
 })->name("welcome");
 Route::get('/rolunk', function () {
     return view('pages.rolunk');
@@ -27,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
+Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -35,11 +37,18 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 
     Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+});
+
+Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
+    Route::get('/', function () {
+        $pendingOrdersCount = \App\Models\Order::where('status', 'Feldolgozás alatt')->count();
+        $unreadMessagesCount = \App\Models\Message::count(); 
+        return view('admin.dashboard', compact('pendingOrdersCount', 'unreadMessagesCount'));
+    })->name('admin.dashboard');
 
     Route::resource("category", CategoryController::class);
+    Route::resource("product", ProductController::class)->names('admin.products');;
     Route::resource("order", OrderController::class);
-    Route::resource("orderItem", OrderItemController::class);
-    Route::resource("product", ProductController::class)->except(['index']);
 
     Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 });

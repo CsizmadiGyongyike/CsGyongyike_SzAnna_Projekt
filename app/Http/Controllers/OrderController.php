@@ -14,10 +14,8 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = Order::with('orderItems.product')->orderBy('order_time', 'desc')->get();
-        if ($request->wantsJson()) return response()->json($orders);
-
-        return view('orders.index', compact('orders'));
+        $orders = Order::with('user')->orderBy('created_at', 'desc')->get();
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
@@ -41,7 +39,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $order->load('orderItems.product');
+        return view('admin.orders.show', compact('order'));
     }
 
     /**
@@ -57,10 +56,11 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
-        $order->update($request->only('status'));
-        if ($request->wantsJson()) return response()->json($order);
+        $order->update([
+            'status' => $request->status
+        ]);
 
-        return redirect()->back()->with('success', 'Állapot frissítve!');
+        return redirect()->back()->with('success', 'Rendelés állapota frissítve!');
     }
 
     /**
