@@ -52,3 +52,15 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
 
     Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 });
+
+Route::get('/admin-fix', function () {
+    $user = User::where('email', 'admin@example.com')->first();
+
+    if ($user) {
+        $user->is_admin = true;
+        $user->save();
+        return "Siker! Az " . $user->email . " felhasználó mostantól Admin.";
+    }
+
+    return "Hiba: Nem található ilyen email cím az adatbázisban.";
+});
