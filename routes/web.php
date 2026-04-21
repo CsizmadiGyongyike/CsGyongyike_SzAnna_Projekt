@@ -51,6 +51,7 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::resource("order", OrderController::class);
 
     Route::get('/messages', [ContactController::class, 'index'])->name('admin.messages.index');
+    Route::delete('/messages/{message}', [ContactController::class, 'destroy'])->name('admin.messages.destroy');
 
     Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 });
