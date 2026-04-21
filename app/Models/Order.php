@@ -16,7 +16,8 @@ class Order extends Model
         'order_time', 
         'status', 
         'amount', 
-        'user_id'
+        'user_id',
+        'address_id'
     ];
 
     public function user()
