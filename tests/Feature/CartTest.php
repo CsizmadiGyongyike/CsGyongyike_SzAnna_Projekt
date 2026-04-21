@@ -37,32 +37,48 @@ class CartTest extends TestCase
     }
 
     public function test_checkout_creates_order()
-    {
-        $user = User::factory()->create();
-        $category = Category::create(['name' => 'Egér']);
-        $product = Product::create([
-            'name' => 'Gamer Mouse',
-            'category_id' => $category->id,
-            'description' => 'Leírás',
-            'price' => 5000,
-            'stock' => 10
-        ]);
+{
+    $user = User::factory()->create();
+    $category = Category::create(['name' => 'Egér']);
+    $product = Product::create([
+        'name' => 'Gamer Mouse',
+        'category_id' => $category->id,
+        'description' => 'Leírás',
+        'price' => 5000,
+        'stock' => 10,
+        'image' => 'default.png'
+    ]);
 
-        $cart = [
-            $product->id => [
-                "name" => $product->name,
-                "quantity" => 1,
-                "price" => $product->price,
-                "image" => $product->image
-            ]
-        ];
+    $cart = [
+        $product->id => [
+            "name" => $product->name,
+            "quantity" => 1,
+            "price" => $product->price,
+            "image" => $product->image
+        ]
+    ];
 
-        $response = $this->actingAs($user)
-                         ->withSession(['cart' => $cart])
-                         ->post(route('cart.checkout'));
+    $response = $this->actingAs($user)
+                     ->withSession(['cart' => $cart])
+                     ->post(route('cart.checkout'), [
+                         'type' => 'private',
+                         'postcode' => '1234',
+                         'city' => 'Budapest',
+                         'address' => 'Teszt utca 1.',
+                         'alias' => 'Otthoni cím'
+                     ]);
 
-        $this->assertDatabaseHas('orders', ['user_id' => $user->id]);
-        $response->assertRedirect();
-        $this->assertEmpty(session('cart'));
-    }
+    $this->assertDatabaseHas('addresses', [
+        'user_id' => $user->id,
+        'city' => 'Budapest'
+    ]);
+
+    $this->assertDatabaseHas('orders', [
+        'user_id' => $user->id,
+        'amount' => 5000
+    ]);
+
+    $response->assertRedirect(route('product.index'));
+    $response->assertSessionHas('success');
+}
 }
