@@ -42,13 +42,15 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
     Route::get('/', function () {
         $pendingOrdersCount = \App\Models\Order::where('status', 'Feldolgozás alatt')->count();
-        $unreadMessagesCount = \App\Models\Message::count(); 
+        $unreadMessagesCount = \App\Models\Message::count();
         return view('admin.dashboard', compact('pendingOrdersCount', 'unreadMessagesCount'));
     })->name('admin.dashboard');
 
     Route::resource("category", CategoryController::class);
     Route::resource("product", ProductController::class)->names('admin.products');;
     Route::resource("order", OrderController::class);
+
+    Route::get('/messages', [ContactController::class, 'index'])->name('admin.messages.index');
 
     Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
 });
