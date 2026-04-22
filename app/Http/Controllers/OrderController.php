@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\OrderItem;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = Order::with('user')->orderBy('created_at', 'desc')->get();
+        $orders = Order::with(['user', 'address'])->orderBy('created_at', 'desc')->get();
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -39,7 +40,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        $order->load('orderItems.product');
+        $order->load(['orderItems.product', 'address']);
         return view('admin.orders.show', compact('order'));
     }
 
@@ -60,6 +61,29 @@ class OrderController extends Controller
             'status' => $request->status
         ]);
 
+        if ($order->address) {
+            $order->address->update([
+                'postcode' => $request->postcode,
+                'city' => $request->city,
+                'address' => $request->address
+            ]);
+        }
+
+        if ($request->has('items')) {
+            foreach ($request->items as $itemId => $newQuantity) {
+                $item = OrderItem::find($itemId);
+                if ($item) {
+                    $product = $item->product;
+                    $product->stock += $item->quantity;
+                    $product->stock -= $newQuantity;
+                    $product->save();
+
+                    $item->update(['quantity' => $newQuantity]);
+                }
+            }
+            $order->update(['amount' => $order->orderItems->sum(fn($i) => $i->unit_price * $i->quantity)]);
+        }
+
         return redirect()->back()->with('success', 'Rendelés állapota frissítve!');
     }
 
@@ -68,6 +92,27 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        foreach ($order->orderItems as $item) {
+            $product = $item->product;
+            $product->stock += $item->quantity;
+            $product->save();
+        }
+
+        $order->delete();
+        return redirect()->route('order.index')->with('success', 'Rendelés törölve!');
+    }
+
+    public function removeItem(Order $order, $itemId)
+    {
+        $item = OrderItem::findOrFail($itemId);
+
+        $product = $item->product;
+        $product->stock += $item->quantity;
+        $product->save();
+        $order->amount -= ($item->unit_price * $item->quantity);
+        $order->save();
+        $item->delete();
+
+        return redirect()->back()->with('success', 'Termék eltávolítva a rendelésből!');
     }
 }

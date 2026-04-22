@@ -13,9 +13,9 @@ class Order extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'order_time', 
-        'status', 
-        'amount', 
+        'order_time',
+        'status',
+        'amount',
         'user_id',
         'address_id'
     ];
@@ -28,5 +28,10 @@ class Order extends Model
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class, 'address_id');
     }
 }

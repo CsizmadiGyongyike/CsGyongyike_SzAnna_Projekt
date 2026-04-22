@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
-    Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
+    Route::patch('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
     Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 
     Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
@@ -54,6 +54,9 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::delete('/messages/{message}', [ContactController::class, 'destroy'])->name('admin.messages.destroy');
 
     Route::post('/kapcsolat', [ContactController::class, 'store'])->name('contact.store');
+
+    Route::delete('/admin/orders/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+    Route::delete('/admin/orders/{order}/item/{itemId}', [OrderController::class, 'removeItem'])->name('order.item.destroy');
 });
 
 Route::get('/admin-fix', function () {

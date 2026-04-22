@@ -46,20 +46,27 @@ class CartController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $cart = session()->get('cart');
+        $cart = session()->get('cart', []);
         $product = Product::findOrFail($id);
 
-        if (isset($cart[$id]) && $request->quantity > 0) {
+        if (isset($cart[$id])) {
+            $newQty = $request->quantity;
 
-            if ($request->quantity > $product->stock) {
-                return redirect()->back()->with('error', 'A kért mennyiség meghaladja a készletet! (Elérhető: ' . $product->stock . ' db)');
+            // Ellenőrizzük, van-e elég készlet
+            if ($newQty > $product->stock) {
+                return redirect()->back()->with('error', 'Sajnos csak ' . $product->stock . ' db van készleten.');
             }
 
-            $cart[$id]["quantity"] = $request->quantity;
+            if ($newQty <= 0) {
+                unset($cart[$id]);
+            } else {
+                $cart[$id]['quantity'] = $newQty;
+            }
+
             session()->put('cart', $cart);
         }
 
-        return redirect()->back()->with('showCart', true);
+        return redirect()->back();
     }
 
     public function destroy(string $id)
@@ -74,7 +81,8 @@ class CartController extends Controller
         return redirect()->back()->with('showCart', true);
     }
 
-    public function checkout(Request $request){
+    public function checkout(Request $request)
+    {
         $cart = session()->get('cart', []);
 
         if (empty($cart)) {
@@ -92,30 +100,30 @@ class CartController extends Controller
             }
 
             $address = Address::create([
-            'user_id'    => Auth::id(),
-            'type'       => $request->type,
-            'postcode'   => $request->postcode,
-            'city'       => $request->city,
-            'address'    => $request->address,
-            'tax_number' => $request->tax_number,
-            'alias'      => 'Rendelési cím ' . now()->format('Y-m-d H:i'),
-        ]);
+                'user_id'    => Auth::id(),
+                'type'       => $request->type,
+                'postcode'   => $request->postcode,
+                'city'       => $request->city,
+                'address'    => $request->address,
+                'tax_number' => $request->tax_number,
+                'alias'      => 'Rendelési cím ' . now()->format('Y-m-d H:i'),
+            ]);
 
             $order = Order::create([
-            'user_id'    => Auth::id(),
-            'address_id' => $address->id,
-            'order_time' => now(),
-            'status'     => 'Feldolgozás alatt',
-            'amount'     => array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart)),
+                'user_id'    => Auth::id(),
+                'address_id' => $address->id,
+                'order_time' => now(),
+                'status'     => 'Feldolgozás alatt',
+                'amount'     => array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart)),
             ]);
 
             foreach ($cart as $id => $details) {
-            OrderItem::create([
-                'order_id'   => $order->id,
-                'product_id' => $id,
-                'quantity'   => $details['quantity'],
-                'unit_price' => $details['price'],
-            ]);
+                OrderItem::create([
+                    'order_id'   => $order->id,
+                    'product_id' => $id,
+                    'quantity'   => $details['quantity'],
+                    'unit_price' => $details['price'],
+                ]);
                 $product = Product::find($id);
                 $product->stock -= $details['quantity'];
                 $product->save();
@@ -124,7 +132,6 @@ class CartController extends Controller
             DB::commit();
             session()->forget('cart');
             return redirect()->route('product.index')->with('success', 'Rendelésedet sikeresen rögzítettük!');
-
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', 'Hiba történt a rendelés során: ' . $e->getMessage());
