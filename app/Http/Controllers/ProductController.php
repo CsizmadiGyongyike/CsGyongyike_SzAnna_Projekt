@@ -17,20 +17,18 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         if ($request->has('category') && !empty($request->category)) {
-        // Keressünk rá a névre
-        $categories = \App\Models\Category::where('name', $request->category)->get();
-        
-        // Ha nem találja (elírás vagy üres), mutassa az összeset
-        if ($categories->isEmpty()) {
-            $categories = \App\Models\Category::all();
+            $categories = Category::where('name', $request->category)->get();
+
+            if ($categories->isEmpty()) {
+                $categories = Category::all();
+            }
+        } else {
+            $categories = Category::all();
         }
-    } else {
-        $categories = \App\Models\Category::all();
-    }
 
-    $products = \App\Models\Product::all();
+        $products = Product::all();
 
-    return view('products.index', compact('products', 'categories'));
+        return view('products.index', compact('products', 'categories'));
     }
 
     /**
@@ -112,5 +110,5 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->back()->with('success', 'Termék törölve!');
-}
+    }
 }

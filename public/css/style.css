@@ -6,7 +6,7 @@ body {
     padding: 0;
 }
 
-header{
+header {
     background-color: black;
     padding: 10px;
     text-align: center;
@@ -15,7 +15,7 @@ header{
     align-items: center;
 }
 
-header nav{
+header nav {
     width: 100%;
 }
 
@@ -32,11 +32,11 @@ footer {
     padding: 10px 0;
 }
 
-.auth-buttons a{
+.auth-buttons a {
     text-decoration: none;
 }
 
-.auth-body{
+.auth-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,11 +45,11 @@ footer {
     width: 100%;
 }
 
-.form-container{
+.form-container {
     background: #1a1a1a;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 400px;
     border-top: 4px solid #48ff34;
@@ -74,8 +74,8 @@ footer {
 .modal-form label {
     font-weight: bold;
     margin-top: 10px;
-    width: 90%; 
-    text-align: left; 
+    width: 90%;
+    text-align: left;
     color: #a2ff74;
 }
 
@@ -87,12 +87,12 @@ footer {
     padding: 5px 10px;
     background-color: #5e5e5e;
     color: white;
-    border: 1px solid #0f0; 
+    border: 1px solid #0f0;
     box-sizing: border-box;
 }
 
 .modal-form button {
-    height: 45px; 
+    height: 45px;
     width: 90%;
     font-weight: bold;
     background-color: #008418;
@@ -103,7 +103,7 @@ footer {
     transition: background-color 0.3s;
 }
 
-.modal-form button:hover{
+.modal-form button:hover {
     background-color: #00b321;
     cursor: pointer;
 }
@@ -128,39 +128,35 @@ footer {
 .dropdown {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Ez rakja középre a szöveget és a lenyíló listát egymáshoz képest */
+    align-items: center;
     position: relative;
 }
 
-/* A lenyíló tartalom stílusa */
 .dropdown-content {
-    display: none; /* Alapesetben rejtve */
+    display: none;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.95); /* Sötét, elegáns háttér */
+    background-color: rgba(0, 0, 0, 0.95);
     min-width: 200px;
     z-index: 1000;
     border: 1px solid #333;
     border-radius: 8px;
     padding: 10px 0;
-    
-    /* EZ A LÉNYEG: Kényszerítjük a függőleges elrendezést */
     flex-direction: column !important;
 }
 
-/* Amikor rávisszük az egeret */
 .dropdown:hover .dropdown-content {
     display: flex;
 }
 
 .dropdown-content a {
-    display: block; /* Biztosítjuk, hogy elfoglalja a teljes szélességet */
+    display: block;
     width: 100%;
     padding: 12px 20px;
     color: #ccc;
-    text-align: center; /* Középre zárt szöveg */
+    text-align: center;
     text-decoration: none;
     transition: 0.2s;
 }
@@ -180,12 +176,12 @@ footer {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content:space-evenly; /* Középre igazítja a fő menüpontokat */
+    justify-content: space-evenly;
     align-items: center;
     padding: 0;
     margin: 0;
     gap: 40px;
-    height: 80px; /* Távolság a menüpontok között */
+    height: 80px;
 }
 
 nav ul li a {
@@ -248,7 +244,7 @@ h3 {
     padding: 10px;
 }
 
-.kapcsolat label{
+.kapcsolat label {
     font-weight: bold;
 }
 
@@ -260,7 +256,7 @@ h3 {
     background-color: #5e5e5e;
 }
 
-.kapcsolat textarea{
+.kapcsolat textarea {
     border-radius: 5px;
     height: 50px;
     width: 20%;
@@ -277,7 +273,7 @@ h3 {
     border-radius: 5px;
 }
 
-.kapcsolat button:hover{
+.kapcsolat button:hover {
     background-color: #00b321;
     cursor: pointer;
 }
@@ -312,20 +308,20 @@ p {
     border-radius: 10px 10px 0 0;
 }
 
-.mycard:hover{
+.mycard:hover {
     box-shadow: 0 0 15px #3cff39;
     transform: translateY(-5px);
 }
 
 .description-box {
-    height: 70px; 
-    overflow-y: auto; 
+    height: 70px;
+    overflow-y: auto;
     margin-bottom: 15px;
     padding: 5px;
 }
 
 .price-tag {
-    margin-top: auto; 
+    margin-top: auto;
     padding-bottom: 10px;
 }
 
@@ -348,6 +344,7 @@ p {
 .description-box::-webkit-scrollbar {
     width: 3px;
 }
+
 .description-box::-webkit-scrollbar-thumb {
     background: #3cff39;
 }
@@ -380,12 +377,12 @@ p {
     text-align: left;
 }
 
-h1{
+h1 {
     text-align: center;
     color: #a2ff74;
 }
 
-.like-a-tag{
+.like-a-tag {
     background-color: #c3ff00;
     color: #000000;
     padding: 10px 15px;
@@ -459,6 +456,7 @@ img {
 }
 
 @media (max-width: 768px) {
+
     .kapcsolat input,
     .kapcsolat textarea,
     .kapcsolat button {
