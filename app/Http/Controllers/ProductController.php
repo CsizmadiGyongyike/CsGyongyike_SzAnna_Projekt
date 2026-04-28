@@ -16,14 +16,21 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::with('products')->get();
-        $products = Product::all();
-
-        if (request()->routeIs('admin.products.index')) {
-            return view('products.admin', compact('products', 'categories'));
+        if ($request->has('category') && !empty($request->category)) {
+        // Keressünk rá a névre
+        $categories = \App\Models\Category::where('name', $request->category)->get();
+        
+        // Ha nem találja (elírás vagy üres), mutassa az összeset
+        if ($categories->isEmpty()) {
+            $categories = \App\Models\Category::all();
         }
+    } else {
+        $categories = \App\Models\Category::all();
+    }
 
-        return view('products.index', compact('categories', 'products'));
+    $products = \App\Models\Product::all();
+
+    return view('products.index', compact('products', 'categories'));
     }
 
     /**

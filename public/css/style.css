@@ -125,11 +125,67 @@ footer {
     box-shadow: 0 0 10px #a2ff74;
 }
 
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ez rakja középre a szöveget és a lenyíló listát egymáshoz képest */
+    position: relative;
+}
+
+/* A lenyíló tartalom stílusa */
+.dropdown-content {
+    display: none; /* Alapesetben rejtve */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.95); /* Sötét, elegáns háttér */
+    min-width: 200px;
+    z-index: 1000;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 0;
+    
+    /* EZ A LÉNYEG: Kényszerítjük a függőleges elrendezést */
+    flex-direction: column !important;
+}
+
+/* Amikor rávisszük az egeret */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content a {
+    display: block; /* Biztosítjuk, hogy elfoglalja a teljes szélességet */
+    width: 100%;
+    padding: 12px 20px;
+    color: #ccc;
+    text-align: center; /* Középre zárt szöveg */
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.dropdown-content a:hover {
+    color: #3cff39;
+    background-color: #111;
+}
+
+.dropdown-content hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 5px 0;
+    width: 100%;
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly; /* Középre igazítja a fő menüpontokat */
+    align-items: center;
     padding: 0;
+    margin: 0;
+    gap: 40px;
+    height: 80px; /* Távolság a menüpontok között */
 }
 
 nav ul li a {
