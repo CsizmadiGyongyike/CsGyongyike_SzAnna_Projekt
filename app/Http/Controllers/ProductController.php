@@ -28,6 +28,10 @@ class ProductController extends Controller
 
         $products = Product::all();
 
+        if ($request->routeIs('admin.products.index')) {
+            return view('products.admin', compact('products', 'categories'));
+        }
+
         return view('products.index', compact('products', 'categories'));
     }
 

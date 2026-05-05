@@ -18,11 +18,26 @@
                                 <p class="price-tag">{{ number_format($product->price, 0, ',', ' ') }} Ft</p>
 
                                 @auth
-                                    <form action="{{ route('cart.store') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <button type="submit" class="card-button">Kosárba</button>
-                                    </form>
+                                    <div class="cart-action-area" style="margin-top: 15px;">
+                                        @if ($product->stock > 0)
+                                            <form action="{{ route('cart.store') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                                <button type="submit" class="card-button">Kosárba</button>
+                                            </form>
+                                            <small style="color: #c8ff00; display: block; margin-top: 5px;">
+                                                Készleten: {{ $product->stock }} db
+                                            </small>
+                                        @else
+                                            <button class="card-button"
+                                                style="background: #555; cursor: not-allowed; border-color: #555;" disabled>
+                                                Elfogyott
+                                            </button>
+                                            <small style="color: #ff4444; display: block; margin-top: 5px;">
+                                                Jelenleg nem rendelhető
+                                            </small>
+                                        @endif
+                                    </div>
                                 @endauth
                             </div>
                         </div>
